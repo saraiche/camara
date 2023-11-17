@@ -3,7 +3,7 @@ let video = document.querySelector("#video");
 let clic_boton = document.querySelector("#clic-foto");
 let canvas = document.querySelector("#canvas");
 let dataurl_container = document.querySelector("#dataurl-container");
-let dataurl = document.querySelector("dataurl");
+let dataurl = document.querySelector("#dataurl");
 let azure_boton = document.querySelector("#clic-azure");
 let img_azure = document.querySelector("#imgazure");
 let img_azureurl = document.querySelector("imgazure-url");
@@ -28,6 +28,7 @@ camara_boton.addEventListener('click', async function(){
 clic_boton.addEventListener('click', function(){
     canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
     let image_data_url = canvas.toDataURL('image/jpeg');
+    console.log(image_data_url, canvas);
     dataurl.value = image_data_url;
     dataurl_container.style.display = 'block';
 });
